@@ -3,6 +3,7 @@ import 'package:suitmedia/app/data/dummy/dummy_event.dart';
 
 class EventController extends GetxController {
   var events = List<DummyEvent>.empty(growable: true).obs;
+  var fragmentPosition = 0.obs;
 
   void getEvents() {
     events.clear();
@@ -11,7 +12,10 @@ class EventController extends GetxController {
         name: 'Fireworks Festival',
         date: '2021-07-14',
         image:
-            'https://source.unsplash.com/gdTxVSAE5sk/640x425'));
+            'https://source.unsplash.com/gdTxVSAE5sk/640x425',
+      lat: -6.935491,
+      lng: 107.659588,
+    ),);
     events.add(DummyEvent(
         id: 2,
         name: 'Live Music Performance',
@@ -42,5 +46,10 @@ class EventController extends GetxController {
         date: '2021-12-02',
         image:
             'https://source.unsplash.com/1xaful0wKZ0/640x426'));
+  }
+
+  //0 for list event, 1 for map
+  void changeFragment(int position){
+    fragmentPosition(position);
   }
 }

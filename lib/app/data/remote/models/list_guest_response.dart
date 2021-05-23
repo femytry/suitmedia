@@ -3,14 +3,14 @@ class ListGuestResponse {
   int? _perPage;
   int? _total;
   int? _totalPages;
-  List<Data>? _data;
+  List<GuestData>? _data;
   Support? _support;
 
   int? get page => _page;
   int? get perPage => _perPage;
   int? get total => _total;
   int? get totalPages => _totalPages;
-  List<Data>? get data => _data;
+  List<GuestData>? get data => _data;
   Support? get support => _support;
 
   ListGuestResponse({
@@ -18,7 +18,7 @@ class ListGuestResponse {
       int? perPage, 
       int? total, 
       int? totalPages, 
-      List<Data>? data, 
+      List<GuestData>? data,
       Support? support}){
     _page = page;
     _perPage = perPage;
@@ -36,7 +36,7 @@ class ListGuestResponse {
     if (json["data"] != null) {
       _data = [];
       json["data"].forEach((v) {
-        _data?.add(Data.fromJson(v));
+        _data?.add(GuestData.fromJson(v));
       });
     }
     _support = json["support"] != null ? Support.fromJson(json["support"]) : null;
@@ -87,7 +87,7 @@ class Support {
 
 }
 
-class Data {
+class GuestData {
   int? _id;
   String? _email;
   String? _firstName;
@@ -100,7 +100,7 @@ class Data {
   String? get lastName => _lastName;
   String? get avatar => _avatar;
 
-  Data({
+  GuestData({
       int? id, 
       String? email, 
       String? firstName, 
@@ -113,7 +113,7 @@ class Data {
     _avatar = avatar;
 }
 
-  Data.fromJson(dynamic json) {
+  GuestData.fromJson(dynamic json) {
     _id = json["id"];
     _email = json["email"];
     _firstName = json["first_name"];

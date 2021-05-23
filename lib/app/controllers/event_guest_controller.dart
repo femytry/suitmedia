@@ -3,10 +3,10 @@ import 'package:suitmedia/app/data/dummy/dummy_event.dart';
 import 'package:suitmedia/app/data/remote/models/list_guest_response.dart';
 
 class EventGuestController extends GetxController{
-  var selectedGuest = Data().obs;
+  var selectedGuest = GuestData().obs;
   var selectedEvent = DummyEvent().obs;
 
-  void selectGuest(Data guest){
+  void selectGuest(GuestData guest){
     selectedGuest(guest);
   }
 
