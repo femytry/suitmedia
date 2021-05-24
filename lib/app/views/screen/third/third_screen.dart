@@ -27,17 +27,23 @@ class ThirdScreen extends StatelessWidget {
             InkWell(
               child: Image.asset('assets/images/ic_search_white.png'),
               onTap: () {
-                _eventController.changeFragment(0);
               },
               customBorder: CircleBorder(),
             ),
-            InkWell(
-              child: Image.asset('assets/images/ic_map_view.png'),
-              onTap: () {
-                _eventController.changeFragment(1);
-              },
-              customBorder: CircleBorder(),
-            ),
+            Obx(() {
+              var asset = 'assets/images/ic_map_view.png';
+              var pos = _eventController.fragmentPosition.value;
+              if (pos == 1) {
+                asset = 'assets/images/ic_list_view.png';
+              }
+              return InkWell(
+                child: Image.asset(asset),
+                onTap: () {
+                  _eventController.changeFragment(pos == 0 ? 1 : 0);
+                },
+                customBorder: CircleBorder(),
+              );
+            })
           ],
         ),
         body: Obx(() {

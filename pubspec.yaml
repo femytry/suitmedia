@@ -34,6 +34,7 @@ dependencies:
   shimmer: ^2.0.0
   get_storage: ^2.0.2
   google_maps_flutter: ^2.0.5
+  carousel_slider: ^4.0.0-nullsafety.0
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +56,7 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/map_style.txt
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

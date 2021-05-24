@@ -182,7 +182,7 @@ class FirstScreen extends StatelessWidget {
     }
     Get.defaultDialog(title: title, content: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Text(desc),
+      child: Text(desc, textAlign: TextAlign.center,),
     ));
   }
 }
